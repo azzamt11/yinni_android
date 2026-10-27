@@ -22,6 +22,13 @@ import kotlinx.datetime.Instant
  * A [NewsResource] with additional user information such as whether the user is following the
  * news resource's topics and whether they have saved (bookmarked) this news resource.
  */
+// Chapter 1: In this chapter you will learn how Kotlin data classes, secondary constructors, and
+// extension functions work in the `:core:model` layer to combine raw app data (`NewsResource`) with
+// user preferences (`UserData`).
+//
+// Exercise 1A: Add a new computed property or constructor parameter `val readingTimeMinutes: Int`
+// to `UserNewsResource` (calculated as `maxOf(1, content.split(" ").size / 200)` in the secondary
+// constructor) so the UI can display an estimated reading time for each article.
 data class UserNewsResource internal constructor(
     val id: String,
     val title: String,
@@ -53,5 +60,9 @@ data class UserNewsResource internal constructor(
     )
 }
 
+// Exercise 1B: Modify the function [mapToUserNewsResources] (or add a companion helper
+// `List<NewsResource>.mapToUnreadUserNewsResources(userData: UserData)`) so it filters out news
+// resources that have already been viewed (`hasBeenViewed == false`) after mapping.
 fun List<NewsResource>.mapToUserNewsResources(userData: UserData): List<UserNewsResource> =
     map { UserNewsResource(it, userData) }
+
