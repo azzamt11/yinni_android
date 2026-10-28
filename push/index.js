@@ -1,11 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execSync, execFileSync } = require("child_process");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const STRUCTURE_FILE = path.join(ROOT_DIR, "structure.txt");
 const MIN_BOX_COLUMN = 112;
-const INITIAL_CLONE_COMMIT = "c934c2e53e20acdb52cd73fec293e797c23e127b";
 
 const EXCLUDED_DIRS = new Set([
   "build",
@@ -47,47 +46,6 @@ function isCodingFile(fileName) {
     fileName.endsWith(".toml") ||
     fileName === "AndroidManifest.xml"
   );
-}
-
-/**
- * 1. Read existing structure.txt and return a Set of relative paths already marked [*]
- */
-function getPreviouslyMarkedPaths() {
-  const marked = new Set();
-  if (!fs.existsSync(STRUCTURE_FILE)) return marked;
-
-  const lines = fs.readFileSync(STRUCTURE_FILE, "utf-8").split(/\r?\n/);
-  const stack = [];
-
-  for (const line of lines) {
-    const boxMatch = line.match(/^(.*?)\s*(\[[ *xX]\])\s*$/);
-    if (!boxMatch) continue;
-
-    const treePart = boxMatch[1].trimEnd();
-    const box = boxMatch[2];
-    const isMarked = box === "[*]" || box.toLowerCase() === "[x]";
-
-    if (treePart === "yinni_android/") continue;
-
-    const connMatch = treePart.match(/^(.*?(?:├── |└── ))(.+)$/);
-    if (!connMatch) continue;
-
-    const prefix = connMatch[1];
-    const itemText = connMatch[2].trim();
-    const depth = Math.floor(prefix.length / 4) - 1;
-    const isDir = itemText.endsWith("/");
-    const cleanName = isDir ? itemText.slice(0, -1) : itemText;
-
-    stack[depth] = cleanName;
-    stack.length = depth + 1;
-
-    const relPath = stack.join("/");
-    if (!isDir && isMarked) {
-      marked.add(relPath);
-    }
-  }
-
-  return marked;
 }
 
 /**
@@ -216,19 +174,21 @@ function generateStructureFile(markedSet) {
   collapse(rootNode);
 
   // Compute [*] status bottom-up (a directory gets [*] when all its child files are [*])
+  // Only modified, added, or renamed files receive [*].
+  // Directories always remain [ ].
   function computeMarked(node) {
     if (node.isFile) {
       node.marked = markedSet.has(node.relPath);
       return node.marked;
     }
-    const children = Array.from(node.children.values());
-    if (children.length === 0) {
-      node.marked = false;
-      return false;
+
+    node.marked = false;
+
+    for (const child of node.children.values()) {
+      computeMarked(child);
     }
-    const childMarks = children.map((c) => computeMarked(c));
-    node.marked = childMarks.every(Boolean);
-    return node.marked;
+
+    return false;
   }
 
   computeMarked(rootNode);
@@ -282,66 +242,118 @@ function generateStructureFile(markedSet) {
   );
 }
 
-function main() {
-  // 1. Read existing [*] marks before rebuilding tree
-  const previouslyMarked = getPreviouslyMarkedPaths();
+function getCurrentGitChanges() {
+  const changed = new Set();
+  const descriptions = new Set();
 
-  // 2. Stage all current changes first so Git accurately detects Renames (R),
-  //    Additions (A), Modifications (M), and Deletions (D)
-  console.log("1. Scanning git changes (additions, renames, modifications, deletions)...");
-  execSync("git add -A", { cwd: ROOT_DIR, stdio: "inherit" });
-
-  const stagedStatusOutput = runGit("diff --cached -M --name-status");
-  const currentChanges = parseNameStatus(stagedStatusOutput);
-
-  // Also check changes committed since the initial clone so earlier commits stay marked [*]
-  const historyStatusOutput = runGit(
-    `diff -M --name-status ${INITIAL_CLONE_COMMIT} HEAD`
+  // 1. Changes already staged
+  const staged = parseNameStatus(
+    runGit("diff --cached -M --name-status")
   );
-  const historyChanges = parseNameStatus(historyStatusOutput);
 
-  // Carry over [*] if a previously marked file was renamed
-  for (const [oldPath, newPath] of currentChanges.renamedMap.entries()) {
-    if (previouslyMarked.has(oldPath)) {
-      previouslyMarked.delete(oldPath);
-      previouslyMarked.add(newPath);
+  // 2. Changes not yet staged
+  const unstaged = parseNameStatus(
+    runGit("diff -M --name-status")
+  );
+
+  // 3. Newly created untracked files
+  const untracked = runGit(
+    "ls-files --others --exclude-standard"
+  );
+
+  for (const result of [staged, unstaged]) {
+    for (const file of result.activeChangedPaths) {
+      changed.add(file);
+    }
+
+    for (const description of result.commitDescriptions) {
+      descriptions.add(description);
     }
   }
 
-  const allMarked = new Set([
-    ...previouslyMarked,
-    ...historyChanges.activeChangedPaths,
-    ...currentChanges.activeChangedPaths,
-  ]);
+  for (const file of untracked.split(/\r?\n/)) {
+    if (!file) continue;
 
-  // 3. Rebuild structure.txt reflecting any added/renamed/deleted files and [*] boxes
-  console.log("2. Updating structure.txt diagram and [*] checkboxes...");
-  generateStructureFile(allMarked);
+    const normalized = normalizePath(file);
 
-  // 4. Stage the updated structure.txt (git add .)
-  console.log("3. Running: git add .");
-  execSync("git add .", { cwd: ROOT_DIR, stdio: "inherit" });
+    if (isIgnoredMetaFile(normalized)) continue;
 
-  // 5. Commit with "Changing: {list of files changed}"
-  const filesForCommitMessage =
-    currentChanges.commitDescriptions.length > 0
-      ? currentChanges.commitDescriptions
-      : historyChanges.commitDescriptions.length > 0
-      ? historyChanges.commitDescriptions
-      : ["structure.txt"];
+    changed.add(normalized);
+    descriptions.add(normalized);
+  }
 
-  const commitMessage = `Changing: ${filesForCommitMessage.join(", ")}`;
-  console.log(`4. Running: git commit -m "${commitMessage}"`);
-  execSync(`git commit -m "${commitMessage}"`, {
+  return {
+    activeChangedPaths: [...changed],
+    commitDescriptions: [...descriptions],
+  };
+}
+
+function main() {
+  // 1. Capture changes BEFORE git add
+  console.log("1. Detecting current Git changes...");
+
+  const currentChanges = getCurrentGitChanges();
+
+  const changedFiles = new Set(
+    currentChanges.activeChangedPaths
+  );
+
+  console.log("Changed files:", [...changedFiles]);
+
+  // 2. Rebuild structure.txt using only current changes
+  console.log("2. Updating structure.txt...");
+
+  generateStructureFile(changedFiles);
+
+  // 3. Stage all changes, including structure.txt
+  console.log("3. Running git add -A...");
+
+  execSync("git add -A", {
     cwd: ROOT_DIR,
     stdio: "inherit",
   });
 
-  // 6. Push to origin main
-  console.log("5. Running: git push origin main");
-  execSync("git push origin main", { cwd: ROOT_DIR, stdio: "inherit" });
+  // 4. Check whether there is anything to commit
+  const stagedChanges = runGit(
+    "diff --cached --name-only"
+  );
+
+  if (!stagedChanges) {
+    console.log("No changes to commit.");
+    return;
+  }
+
+  // 5. Generate commit message
+  const descriptions =
+    currentChanges.commitDescriptions.length > 0
+      ? currentChanges.commitDescriptions
+      : ["structure.txt"];
+
+  const commitMessage =
+    `Changing: ${descriptions.join(", ")}`;
+
+  console.log("4. Committing changes...");
+
+  // Avoid shell quoting problems in commit messages
+  execFileSync(
+    "git",
+    ["commit", "-m", commitMessage],
+    {
+      cwd: ROOT_DIR,
+      stdio: "inherit",
+    }
+  );
+
+  // 6. Push
+  console.log("5. Pushing to origin main...");
+
+  execSync("git push origin main", {
+    cwd: ROOT_DIR,
+    stdio: "inherit",
+  });
 
   console.log("Done!");
 }
+  
 
 main();
