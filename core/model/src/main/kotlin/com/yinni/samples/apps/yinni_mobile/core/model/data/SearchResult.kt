@@ -18,6 +18,6 @@ package com.yinni.samples.apps.yinni_mobile.core.model.data
 
 /** An entity that holds the search result */
 data class SearchResult(
-    val topics: List<Topic> = emptyList(),
-    val newsResources: List<NewsResource> = emptyList(),
+    val products: List<Product> = emptyList(),
+    val productResources: List<ProductResource> = emptyList(),
 )

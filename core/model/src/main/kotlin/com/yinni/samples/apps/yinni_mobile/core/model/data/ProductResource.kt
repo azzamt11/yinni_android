@@ -21,7 +21,7 @@ import kotlinx.datetime.Instant
 /**
  * External data layer representation of a fully populated NiA news resource
  */
-data class NewsResource(
+data class ProductResource(
     val id: String,
     val title: String,
     val content: String,
