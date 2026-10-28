@@ -15,16 +15,16 @@
  */
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.hilt)
 }
 
 android {
     defaultConfig {
         consumerProguardFiles("consumer-proguard-rules.pro")
     }
-    namespace = "com.google.samples.apps.nowinandroid.core.datastore"
+    namespace = "com.yinni.samples.apps.yinni.core.datastore"
 }
 
 dependencies {

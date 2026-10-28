@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.hilt)
 }
 
 android {
     defaultConfig {
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.yinni.samples.apps.yinni.core.testing.NiaTestRunner"
     }
-    namespace = "com.google.samples.apps.nowinandroid.sync"
+    namespace = "com.yinni.samples.apps.yinni.sync"
 }
 
 dependencies {

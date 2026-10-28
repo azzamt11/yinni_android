@@ -197,19 +197,19 @@ room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 # Plugins defined by this project
-nowinandroid-android-application = { id = "nowinandroid.android.application" }
-nowinandroid-android-application-compose = { id = "nowinandroid.android.application.compose" }
-nowinandroid-android-application-firebase = { id = "nowinandroid.android.application.firebase" }
-nowinandroid-android-application-flavors = { id = "nowinandroid.android.application.flavors" }
-nowinandroid-android-application-jacoco = { id = "nowinandroid.android.application.jacoco" }
-nowinandroid-android-feature-impl = { id = "nowinandroid.android.feature.impl" }
-nowinandroid-android-feature-api = { id = "nowinandroid.android.feature.api" }
-nowinandroid-android-library = { id = "nowinandroid.android.library" }
-nowinandroid-android-library-compose = { id = "nowinandroid.android.library.compose" }
-nowinandroid-android-library-jacoco = { id = "nowinandroid.android.library.jacoco" }
-nowinandroid-android-lint = { id = "nowinandroid.android.lint" }
-nowinandroid-android-room = { id = "nowinandroid.android.room" }
-nowinandroid-android-test = { id = "nowinandroid.android.test" }
-nowinandroid-hilt = { id = "nowinandroid.hilt" }
-nowinandroid-jvm-library = { id = "nowinandroid.jvm.library" }
-nowinandroid-root = { id = "nowinandroid.root" }
+yinni-android-application = { id = "yinni.android.application" }
+yinni-android-application-compose = { id = "yinni.android.application.compose" }
+yinni-android-application-firebase = { id = "yinni.android.application.firebase" }
+yinni-android-application-flavors = { id = "yinni.android.application.flavors" }
+yinni-android-application-jacoco = { id = "yinni.android.application.jacoco" }
+yinni-android-feature-impl = { id = "yinni.android.feature.impl" }
+yinni-android-feature-api = { id = "yinni.android.feature.api" }
+yinni-android-library = { id = "yinni.android.library" }
+yinni-android-library-compose = { id = "yinni.android.library.compose" }
+yinni-android-library-jacoco = { id = "yinni.android.library.jacoco" }
+yinni-android-lint = { id = "yinni.android.lint" }
+yinni-android-room = { id = "yinni.android.room" }
+yinni-android-test = { id = "yinni.android.test" }
+yinni-hilt = { id = "yinni.hilt" }
+yinni-jvm-library = { id = "yinni.jvm.library" }
+yinni-root = { id = "yinni.root" }

@@ -35,7 +35,11 @@ function normalizePath(p) {
 
 function isIgnoredMetaFile(relPath) {
   const norm = normalizePath(relPath);
-  return norm === "structure.txt" || norm.startsWith("push/");
+  return (
+    norm === "structure.txt" ||
+    norm === "rename_to_yinni.js" ||
+    norm.startsWith("push/")
+  );
 }
 
 function isCodingFile(fileName) {
@@ -102,7 +106,7 @@ function collectCodingFiles(dir, relParts = [], results = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
     if (entry.isDirectory()) {
-      if (EXCLUDED_DIRS.has(entry.name)) continue;
+      if (EXCLUDED_DIRS.has(entry.name) || entry.name.startsWith(".")) continue;
       collectCodingFiles(
         path.join(dir, entry.name),
         [...relParts, entry.name],

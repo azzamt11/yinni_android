@@ -1,10 +1,10 @@
 # Modularization learning journey
 
 In this learning journey you will learn about the modularization strategy used
-to create modules in the Now in Android app. For the theory behind modularization, check out
+to create modules in the Yinni app. For the theory behind modularization, check out
 [the official guidance](https://developer.android.com/topic/modularization).
 
-**IMPORTANT:** Every module has a dependency graph in its README ([example for the app module](https://github.com/android/nowinandroid/tree/main/app)) which can be useful for understanding the overall structure of the project.
+**IMPORTANT:** Every module has a dependency graph in its README ([example for the app module](https://github.com/android/yinni/tree/main/app)) which can be useful for understanding the overall structure of the project.
 
 ## Module types
 
@@ -63,7 +63,7 @@ classDef jvm-library fill:#BDB2FF,stroke:#000,stroke-width:2px,color:#000;
 **Top tip**: A module graph (shown above) can be useful during modularization planning for
 visualizing dependencies between modules.
 
-The Now in Android app contains the following types of modules:
+The Yinni app contains the following types of modules:
 
 ### The `app` module
 This contains app level and scaffolding classes that bind the rest of the codebase, such as
@@ -128,8 +128,8 @@ For example, `sync`, `benchmark` and `test` modules, as well as `app-nia-catalog
    <td>Functionality associated with a specific feature or user journey. Typically contains UI components and ViewModels which read data from other modules.<br>
    Examples include:<br>
    <ul>
-      <li><a href="https://github.com/android/nowinandroid/tree/main/feature/topic/impl"><code>feature:topic:impl</code></a> displays information about a topic on the TopicScreen.</li>
-      <li><a href="https://github.com/android/nowinandroid/tree/main/feature/foryou/impl"><code>feature:foryou:impl</code></a> which displays the user's news feed, and onboarding during first run, on the For You screen.</li>
+      <li><a href="https://github.com/android/yinni/tree/main/feature/topic/impl"><code>feature:topic:impl</code></a> displays information about a topic on the TopicScreen.</li>
+      <li><a href="https://github.com/android/yinni/tree/main/feature/foryou/impl"><code>feature:foryou:impl</code></a> which displays the user's news feed, and onboarding during first run, on the For You screen.</li>
       </ul>
    </td>
    <td><code>TopicScreen</code><br>
@@ -225,7 +225,7 @@ You can also manually update the graphs by running the `graphUpdate` task.
 
 ## Further considerations
 
-Our modularization approach was defined taking into account the “Now in Android” project roadmap, upcoming work and new features. Additionally, our aim this time around was to find the right balance between overmodularizing a relatively small app and using this opportunity to showcase a modularization pattern fit for a much larger codebase, closer to real world apps in production environments.
+Our modularization approach was defined taking into account the “Yinni” project roadmap, upcoming work and new features. Additionally, our aim this time around was to find the right balance between overmodularizing a relatively small app and using this opportunity to showcase a modularization pattern fit for a much larger codebase, closer to real world apps in production environments.
 
 This approach was discussed with the Android community, and evolved taking their feedback into account. With modularization however, there isn’t one right answer that makes all others wrong. Ultimately, there are many ways and approaches to modularizing an app and rarely does one approach fit all purposes, codebases and team preferences. This is why planning beforehand and taking into account all goals, problems you’re trying to solve, future work and predicting potential stepping stones are all crucial steps for defining the best fit structure under your own, unique circumstances. Developers can benefit from a brainstorming session to draw out a graph of modules and dependencies to visualize and plan this better.
 

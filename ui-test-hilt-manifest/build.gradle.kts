@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.hilt)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.uitesthiltmanifest"
+    namespace = "com.yinni.samples.apps.yinni.uitesthiltmanifest"
 }

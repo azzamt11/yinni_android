@@ -19,9 +19,9 @@ import java.io.StringReader
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.hilt)
     id("kotlinx-serialization")
 }
 
@@ -29,7 +29,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace = "com.google.samples.apps.nowinandroid.core.network"
+    namespace = "com.yinni.samples.apps.yinni.core.network"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

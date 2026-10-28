@@ -15,13 +15,13 @@
  */
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.impl)
-    alias(libs.plugins.nowinandroid.android.library.compose)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
+    alias(libs.plugins.yinni.android.feature.impl)
+    alias(libs.plugins.yinni.android.library.compose)
+    alias(libs.plugins.yinni.android.library.jacoco)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.search.impl"
+    namespace = "com.yinni.samples.apps.yinni.feature.search.impl"
 }
 
 dependencies {

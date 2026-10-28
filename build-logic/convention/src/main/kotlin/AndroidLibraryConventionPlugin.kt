@@ -16,13 +16,13 @@
 
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
-import com.google.samples.apps.nowinandroid.configureFlavors
-import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
-import com.google.samples.apps.nowinandroid.configureKotlinAndroid
-import com.google.samples.apps.nowinandroid.configurePrintApksTask
-import com.google.samples.apps.nowinandroid.configureSpotlessForAndroid
-import com.google.samples.apps.nowinandroid.disableUnnecessaryAndroidTests
-import com.google.samples.apps.nowinandroid.libs
+import com.yinni.samples.apps.yinni.configureFlavors
+import com.yinni.samples.apps.yinni.configureGradleManagedDevices
+import com.yinni.samples.apps.yinni.configureKotlinAndroid
+import com.yinni.samples.apps.yinni.configurePrintApksTask
+import com.yinni.samples.apps.yinni.configureSpotlessForAndroid
+import com.yinni.samples.apps.yinni.disableUnnecessaryAndroidTests
+import com.yinni.samples.apps.yinni.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -33,7 +33,7 @@ abstract class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.android.library")
-            apply(plugin = "nowinandroid.android.lint")
+            apply(plugin = "yinni.android.lint")
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)

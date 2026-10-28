@@ -15,13 +15,13 @@
  */
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.impl)
-    alias(libs.plugins.nowinandroid.android.library.compose)
+    alias(libs.plugins.yinni.android.feature.impl)
+    alias(libs.plugins.yinni.android.library.compose)
     alias(libs.plugins.roborazzi)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.foryou.impl"
+    namespace = "com.yinni.samples.apps.yinni.feature.foryou.impl"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

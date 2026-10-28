@@ -1,6 +1,6 @@
-# Now in Android Project
+# Yinni Project
 
-Now in Android is a native Android mobile application written in Kotlin. It provides regular news
+Yinni is a native Android mobile application written in Kotlin. It provides regular news
 about Android development. Users can choose to follow topics, be notified when new content is
 available, and bookmark items.
 
@@ -55,4 +55,4 @@ The app and Android libraries have two product flavors: `demo` and `prod`, and t
 
 ## Version control and code location
 
-- The project uses git and is hosted in https://github.com/android/nowinandroid.
+- The project uses git and is hosted in https://github.com/android/yinni.

@@ -1,6 +1,6 @@
 # Architecture Learning Journey
 
-In this learning journey you will learn about the Now in Android app architecture: its layers, key classes and the interactions between them.
+In this learning journey you will learn about the Yinni app architecture: its layers, key classes and the interactions between them.
 
 
 ## Goals and requirements
@@ -26,7 +26,7 @@ The app architecture has three layers: a [data layer](https://developer.android.
 </center>
 
 > [!NOTE]  
-> The official Android architecture is different from other architectures, such as "Clean Architecture". Concepts from other architectures may not apply here, or be applied in different ways. [More discussion here](https://github.com/android/nowinandroid/discussions/1273).
+> The official Android architecture is different from other architectures, such as "Clean Architecture". Concepts from other architectures may not apply here, or be applied in different ways. [More discussion here](https://github.com/android/yinni/discussions/1273).
 
 The architecture follows a reactive programming model with [unidirectional data flow](https://developer.android.com/jetpack/guide/ui-layer#udf). With the data layer at the bottom, the key concepts are:
 
@@ -258,7 +258,7 @@ These use cases are used to simplify and remove duplicate logic from ViewModels.
 
 For example, `GetUserNewsResourcesUseCase` combines a stream (implemented using `Flow`) of `NewsResource`s from a `NewsRepository` with a stream of `UserData` objects from a `UserDataRepository` to create a stream of `UserNewsResource`s. This stream is used by various ViewModels to display news resources on screen with their bookmarked state.  
 
-Notably, the domain layer in Now in Android _does not_ (for now) contain any use cases for event handling. Events are handled by the UI layer calling methods on repositories directly.
+Notably, the domain layer in Yinni _does not_ (for now) contain any use cases for event handling. Events are handled by the UI layer calling methods on repositories directly.
 
 ## UI Layer
 

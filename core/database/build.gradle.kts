@@ -15,14 +15,14 @@
  */
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.android.room)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.android.room)
+    alias(libs.plugins.yinni.hilt)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.database"
+    namespace = "com.yinni.samples.apps.yinni.core.database"
 }
 
 dependencies {

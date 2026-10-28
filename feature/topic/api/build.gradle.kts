@@ -15,11 +15,11 @@
  */
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.api)
-    alias(libs.plugins.nowinandroid.android.feature.impl)
-    alias(libs.plugins.nowinandroid.android.library.compose)
+    alias(libs.plugins.yinni.android.feature.api)
+    alias(libs.plugins.yinni.android.feature.impl)
+    alias(libs.plugins.yinni.android.library.compose)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.topic.api"
+    namespace = "com.yinni.samples.apps.yinni.feature.topic.api"
 }

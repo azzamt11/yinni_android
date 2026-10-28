@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.compose)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
+    alias(libs.plugins.yinni.android.library)
+    alias(libs.plugins.yinni.android.library.compose)
+    alias(libs.plugins.yinni.android.library.jacoco)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.ui"
+    namespace = "com.yinni.samples.apps.yinni.core.ui"
 }
 
 dependencies {

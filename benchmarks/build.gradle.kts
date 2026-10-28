@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import com.google.samples.apps.nowinandroid.configureFlavors
+import com.yinni.samples.apps.yinni.configureFlavors
 
 plugins {
     alias(libs.plugins.baselineprofile)
-    alias(libs.plugins.nowinandroid.android.test)
+    alias(libs.plugins.yinni.android.test)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.benchmarks"
+    namespace = "com.yinni.samples.apps.yinni.benchmarks"
 
     defaultConfig {
         minSdk = 28
