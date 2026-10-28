@@ -173,22 +173,33 @@ function generateStructureFile(markedSet) {
 
   collapse(rootNode);
 
-  // Compute [*] status bottom-up (a directory gets [*] when all its child files are [*])
-  // Only modified, added, or renamed files receive [*].
-  // Directories always remain [ ].
+  // Files are marked based on Git changes.
+  // Directories are marked [*] only when ALL their
+  // immediate children (files and directories) are [*].
+  // This propagates recursively up to the root.
   function computeMarked(node) {
+    // File: mark only if changed in Git
     if (node.isFile) {
       node.marked = markedSet.has(node.relPath);
       return node.marked;
     }
 
-    node.marked = false;
+    // Directory: recursively calculate children
+    const children = Array.from(node.children.values());
 
-    for (const child of node.children.values()) {
-      computeMarked(child);
+    // Empty directories should never be marked
+    if (children.length === 0) {
+      node.marked = false;
+      return false;
     }
 
-    return false;
+    // Calculate each child's marked status
+    const childMarks = children.map(child => computeMarked(child));
+
+    // Mark directory only when ALL children are marked
+    node.marked = childMarks.every(Boolean);
+
+    return node.marked;
   }
 
   computeMarked(rootNode);
