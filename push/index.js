@@ -257,6 +257,71 @@ function generateStructureFile(markedSet) {
   );
 }
 
+function getPreviouslyMarkedPaths() {
+  const marked = new Set();
+
+  if (!fs.existsSync(STRUCTURE_FILE)) {
+    return marked;
+  }
+
+  const lines = fs
+    .readFileSync(STRUCTURE_FILE, "utf-8")
+    .split(/\r?\n/);
+
+  const stack = [];
+
+  for (const line of lines) {
+    // Extract the tree and checkbox.
+    const match = line.match(
+      /^(.*?)\s+(\[[ *xX]\])\s*$/
+    );
+
+    if (!match) continue;
+
+    const treePart = match[1];
+    const checkbox = match[2];
+
+    // Ignore root.
+    if (treePart === "yinni_android/") {
+      continue;
+    }
+
+    // Extract tree connector and name.
+    const treeMatch = treePart.match(
+      /^([│ ]*)(?:├── |└── )(.+)$/
+    );
+
+    if (!treeMatch) continue;
+
+    const prefix = treeMatch[1];
+    const name = treeMatch[2];
+
+    const depth = prefix.length / 4;
+    const isDirectory = name.endsWith("/");
+
+    const cleanName = isDirectory
+      ? name.slice(0, -1)
+      : name;
+
+    // Support collapsed paths such as:
+    // src/main/kotlin/com/example/
+    const parts = cleanName.split("/").filter(Boolean);
+
+    stack[depth] = parts;
+    stack.length = depth + 1;
+
+    if (!isDirectory && checkbox !== "[ ]") {
+      const relativePath = stack
+        .flat()
+        .join("/");
+
+      marked.add(relativePath);
+    }
+  }
+
+  return marked;
+}
+
 function getCurrentGitChanges() {
   const changed = new Set();
   const descriptions = new Set();
@@ -307,13 +372,51 @@ function main() {
   // 1. Capture changes BEFORE git add
   console.log("1. Detecting current Git changes...");
 
-  const currentChanges = getCurrentGitChanges();
+  // 1. Recover previously marked files.
+const previouslyMarked = getPreviouslyMarkedPaths();
 
-  const changedFiles = new Set(
-    currentChanges.activeChangedPaths
+// 2. Detect new Git changes.
+const currentChanges = getCurrentGitChanges();
+
+// 3. Preserve marks across renames.
+const stagedRenames = parseNameStatus(
+  runGit("diff --cached -M --name-status")
+).renamedMap;
+
+const unstagedRenames = parseNameStatus(
+  runGit("diff -M --name-status")
+).renamedMap;
+
+for (const [oldPath, newPath] of [
+  ...stagedRenames,
+  ...unstagedRenames,
+]) {
+  if (previouslyMarked.has(oldPath)) {
+    previouslyMarked.delete(oldPath);
+    previouslyMarked.add(newPath);
+  }
+}
+
+// 4. Merge previous marks with current changes.
+const changedFiles = new Set([
+  ...previouslyMarked,
+  ...currentChanges.activeChangedPaths,
+  ]);
+
+  console.log(
+    "Previously marked:",
+    previouslyMarked.size
   );
 
-  console.log("Changed files:", [...changedFiles]);
+  console.log(
+    "New Git changes:",
+    currentChanges.activeChangedPaths.length
+  );
+
+  console.log(
+    "Total marked files:",
+    changedFiles.size
+  );
 
   // 2. Rebuild structure.txt using only current changes
   console.log("2. Updating structure.txt...");
