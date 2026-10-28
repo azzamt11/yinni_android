@@ -38,19 +38,19 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaButton
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaFilterChip
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaIconToggleButton
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaNavigationBar
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaNavigationBarItem
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaOutlinedButton
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaTab
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaTabRow
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaTextButton
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaTopicTag
-import com.yinni.samples.apps.yinni.core.designsystem.component.NiaViewToggleButton
-import com.yinni.samples.apps.yinni.core.designsystem.icon.NiaIcons
-import com.yinni.samples.apps.yinni.core.designsystem.theme.NiaTheme
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaButton
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaFilterChip
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaIconToggleButton
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaNavigationBar
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaNavigationBarItem
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaOutlinedButton
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaTab
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaTabRow
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaTextButton
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaTopicTag
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.component.NiaViewToggleButton
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.icon.NiaIcons
+import com.yinni.samples.apps.yinni_mobile.core.designsystem.theme.NiaTheme
 
 /**
  * Yinni component catalog.

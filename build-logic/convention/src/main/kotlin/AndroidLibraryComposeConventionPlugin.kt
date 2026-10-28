@@ -15,7 +15,7 @@
  */
 
 import com.android.build.api.dsl.LibraryExtension
-import com.yinni.samples.apps.yinni.configureAndroidCompose
+import com.yinni.samples.apps.yinni_mobile.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

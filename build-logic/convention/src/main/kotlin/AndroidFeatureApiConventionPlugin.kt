@@ -22,7 +22,7 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureApiConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "yinni.android.library")
+            apply(plugin = "yinni_mobile.android.library")
             apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
             dependencies {

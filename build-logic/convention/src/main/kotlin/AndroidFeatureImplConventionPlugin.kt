@@ -15,8 +15,8 @@
  */
 
 import com.android.build.api.dsl.LibraryExtension
-import com.yinni.samples.apps.yinni.configureGradleManagedDevices
-import com.yinni.samples.apps.yinni.libs
+import com.yinni.samples.apps.yinni_mobile.configureGradleManagedDevices
+import com.yinni.samples.apps.yinni_mobile.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -26,8 +26,8 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureImplConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "yinni.android.library")
-            apply(plugin = "yinni.hilt")
+            apply(plugin = "yinni_mobile.android.library")
+            apply(plugin = "yinni_mobile.hilt")
 
             extensions.configure<LibraryExtension> {
                 testOptions.animationsDisabled = true

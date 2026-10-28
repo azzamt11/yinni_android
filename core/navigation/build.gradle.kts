@@ -15,15 +15,15 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.android.library)
-    alias(libs.plugins.yinni.hilt)
+    alias(libs.plugins.yinni.mobile.android.library)
+    alias(libs.plugins.yinni.mobile.hilt)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.core.navigation"
+    namespace = "com.yinni.samples.apps.yinni_mobile.core.navigation"
 }
 
 dependencies {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import com.yinni.samples.apps.yinni.core.network.demo.DemoAssetManager
+import com.yinni.samples.apps.yinni_mobile.core.network.demo.DemoAssetManager
 import java.io.File
 import java.io.InputStream
 import java.util.Properties

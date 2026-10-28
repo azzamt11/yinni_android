@@ -1,6 +1,6 @@
 ![Yinni](docs/images/nia-splash.jpg "Yinni")
 
-<a href="https://play.google.com/store/apps/details?id=com.yinni.samples.apps.yinni"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="70"></a>
+<a href="https://play.google.com/store/apps/details?id=com.yinni.samples.apps.yinni_mobile"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="70"></a>
 
 Yinni App
 ==================
@@ -15,7 +15,7 @@ follows Android design and development best practices and is intended to be a us
 for developers. As a running app, it's intended to help developers keep up-to-date with the world
 of Android development by providing regular news updates.
 
-The app is currently in development. The `prodRelease` variant is [available on the Play Store](https://play.google.com/store/apps/details?id=com.yinni.samples.apps.yinni).
+The app is currently in development. The `prodRelease` variant is [available on the Play Store](https://play.google.com/store/apps/details?id=com.yinni.samples.apps.yinni_mobile).
 
 # Features
 
@@ -124,7 +124,7 @@ tests against _all_ build variants which is both unnecessary and will result in 
 A screenshot test takes a screenshot of a screen or a UI component within the app, and compares it 
 with a previously recorded screenshot which is known to be rendered correctly. 
 
-For example, Yinni has [screenshot tests](https://github.com/android/yinni/blob/main/app/src/testDemo/kotlin/com/yinni/samples/apps/yinni/ui/NiaAppScreenSizesScreenshotTests.kt)
+For example, Yinni has [screenshot tests](https://github.com/android/yinni/blob/main/app/src/testDemo/kotlin/com/yinni/samples/apps/yinni_mobile/ui/NiaAppScreenSizesScreenshotTests.kt)
 to verify that the navigation is displayed correctly on different screen sizes 
 ([known correct screenshots](https://github.com/android/yinni/tree/main/app/src/testDemo/screenshots)). 
 

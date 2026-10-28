@@ -15,12 +15,12 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.android.feature.impl)
-    alias(libs.plugins.yinni.android.library.compose)
-    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.mobile.android.feature.impl)
+    alias(libs.plugins.yinni.mobile.android.library.compose)
+    alias(libs.plugins.yinni.mobile.android.library.jacoco)
 }
 android {
-    namespace = "com.yinni.samples.apps.yinni.feature.interests.impl"
+    namespace = "com.yinni.samples.apps.yinni_mobile.feature.interests.impl"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

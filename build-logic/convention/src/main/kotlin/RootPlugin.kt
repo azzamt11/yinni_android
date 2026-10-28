@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import com.yinni.samples.apps.yinni.configureGraphTasks
-import com.yinni.samples.apps.yinni.configureSpotlessForRootProject
+import com.yinni.samples.apps.yinni_mobile.configureGraphTasks
+import com.yinni.samples.apps.yinni_mobile.configureSpotlessForRootProject
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.configuration.BuildFeatures

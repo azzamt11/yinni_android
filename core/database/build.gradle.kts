@@ -15,14 +15,14 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.android.library)
-    alias(libs.plugins.yinni.android.library.jacoco)
-    alias(libs.plugins.yinni.android.room)
-    alias(libs.plugins.yinni.hilt)
+    alias(libs.plugins.yinni.mobile.android.library)
+    alias(libs.plugins.yinni.mobile.android.library.jacoco)
+    alias(libs.plugins.yinni.mobile.android.room)
+    alias(libs.plugins.yinni.mobile.hilt)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.core.database"
+    namespace = "com.yinni.samples.apps.yinni_mobile.core.database"
 }
 
 dependencies {

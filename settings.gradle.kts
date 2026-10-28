@@ -42,7 +42,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "yinni"
+rootProject.name = "yinni_mobile"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")

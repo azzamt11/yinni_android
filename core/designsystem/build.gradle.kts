@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.yinni.android.library)
-    alias(libs.plugins.yinni.android.library.compose)
-    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.mobile.android.library)
+    alias(libs.plugins.yinni.mobile.android.library.compose)
+    alias(libs.plugins.yinni.mobile.android.library.jacoco)
     alias(libs.plugins.roborazzi)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.core.designsystem"
+    namespace = "com.yinni.samples.apps.yinni_mobile.core.designsystem"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

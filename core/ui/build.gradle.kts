@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.yinni.android.library)
-    alias(libs.plugins.yinni.android.library.compose)
-    alias(libs.plugins.yinni.android.library.jacoco)
+    alias(libs.plugins.yinni.mobile.android.library)
+    alias(libs.plugins.yinni.mobile.android.library.compose)
+    alias(libs.plugins.yinni.mobile.android.library.jacoco)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.core.ui"
+    namespace = "com.yinni.samples.apps.yinni_mobile.core.ui"
 }
 
 dependencies {

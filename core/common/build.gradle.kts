@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.yinni.jvm.library)
-    alias(libs.plugins.yinni.hilt)
+    alias(libs.plugins.yinni.mobile.jvm.library)
+    alias(libs.plugins.yinni.mobile.hilt)
 }
 
 dependencies {

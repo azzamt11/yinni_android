@@ -15,7 +15,7 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.jvm.library)
+    alias(libs.plugins.yinni.mobile.jvm.library)
 }
 
 dependencies {

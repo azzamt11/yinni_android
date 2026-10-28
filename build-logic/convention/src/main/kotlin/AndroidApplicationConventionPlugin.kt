@@ -16,11 +16,11 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.yinni.samples.apps.yinni.configureBadgingTasks
-import com.yinni.samples.apps.yinni.configureGradleManagedDevices
-import com.yinni.samples.apps.yinni.configureKotlinAndroid
-import com.yinni.samples.apps.yinni.configurePrintApksTask
-import com.yinni.samples.apps.yinni.configureSpotlessForAndroid
+import com.yinni.samples.apps.yinni_mobile.configureBadgingTasks
+import com.yinni.samples.apps.yinni_mobile.configureGradleManagedDevices
+import com.yinni.samples.apps.yinni_mobile.configureKotlinAndroid
+import com.yinni.samples.apps.yinni_mobile.configurePrintApksTask
+import com.yinni.samples.apps.yinni_mobile.configureSpotlessForAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -30,7 +30,7 @@ abstract class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.android.application")
-            apply(plugin = "yinni.android.lint")
+            apply(plugin = "yinni_mobile.android.lint")
             apply(plugin = "com.dropbox.dependency-guard")
 
             extensions.configure<ApplicationExtension> {

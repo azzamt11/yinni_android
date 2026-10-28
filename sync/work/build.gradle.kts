@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.yinni.android.library)
-    alias(libs.plugins.yinni.android.library.jacoco)
-    alias(libs.plugins.yinni.hilt)
+    alias(libs.plugins.yinni.mobile.android.library)
+    alias(libs.plugins.yinni.mobile.android.library.jacoco)
+    alias(libs.plugins.yinni.mobile.hilt)
 }
 
 android {
     defaultConfig {
-        testInstrumentationRunner = "com.yinni.samples.apps.yinni.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.yinni.samples.apps.yinni_mobile.core.testing.NiaTestRunner"
     }
-    namespace = "com.yinni.samples.apps.yinni.sync"
+    namespace = "com.yinni.samples.apps.yinni_mobile.sync"
 }
 
 dependencies {

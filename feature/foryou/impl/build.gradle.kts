@@ -15,13 +15,13 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.android.feature.impl)
-    alias(libs.plugins.yinni.android.library.compose)
+    alias(libs.plugins.yinni.mobile.android.feature.impl)
+    alias(libs.plugins.yinni.mobile.android.library.compose)
     alias(libs.plugins.roborazzi)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.feature.foryou.impl"
+    namespace = "com.yinni.samples.apps.yinni_mobile.feature.foryou.impl"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

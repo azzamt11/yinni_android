@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import com.yinni.samples.apps.yinni.NiaBuildType
+import com.yinni.samples.apps.yinni_mobile.NiaBuildType
 
 plugins {
-    alias(libs.plugins.yinni.android.application)
-    alias(libs.plugins.yinni.android.application.compose)
-    alias(libs.plugins.yinni.android.application.flavors)
-    alias(libs.plugins.yinni.android.application.jacoco)
-    alias(libs.plugins.yinni.android.application.firebase)
-    alias(libs.plugins.yinni.hilt)
+    alias(libs.plugins.yinni.mobile.android.application)
+    alias(libs.plugins.yinni.mobile.android.application.compose)
+    alias(libs.plugins.yinni.mobile.android.application.flavors)
+    alias(libs.plugins.yinni.mobile.android.application.jacoco)
+    alias(libs.plugins.yinni.mobile.android.application.firebase)
+    alias(libs.plugins.yinni.mobile.hilt)
     alias(libs.plugins.google.osslicenses)
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
@@ -30,12 +30,12 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId = "com.yinni.samples.apps.yinni"
+        applicationId = "com.yinni.samples.apps.yinni_mobile"
         versionCode = 8
         versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         // Custom test runner to set up Hilt dependency graph
-        testInstrumentationRunner = "com.yinni.samples.apps.yinni.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.yinni.samples.apps.yinni_mobile.core.testing.NiaTestRunner"
     }
 
     buildTypes {
@@ -62,7 +62,7 @@ android {
         }
     }
     testOptions.unitTests.isIncludeAndroidResources = true
-    namespace = "com.yinni.samples.apps.yinni"
+    namespace = "com.yinni.samples.apps.yinni_mobile"
 }
 
 dependencies {

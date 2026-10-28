@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import com.yinni.samples.apps.yinni.configureKotlinJvm
-import com.yinni.samples.apps.yinni.configureSpotlessForJvm
-import com.yinni.samples.apps.yinni.libs
+import com.yinni.samples.apps.yinni_mobile.configureKotlinJvm
+import com.yinni.samples.apps.yinni_mobile.configureSpotlessForJvm
+import com.yinni.samples.apps.yinni_mobile.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -26,7 +26,7 @@ abstract class JvmLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "org.jetbrains.kotlin.jvm")
-            apply(plugin = "yinni.android.lint")
+            apply(plugin = "yinni_mobile.android.lint")
 
             configureKotlinJvm()
             configureSpotlessForJvm()

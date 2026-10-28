@@ -15,11 +15,11 @@
  */
 
 plugins {
-    alias(libs.plugins.yinni.android.feature.api)
-    alias(libs.plugins.yinni.android.feature.impl)
-    alias(libs.plugins.yinni.android.library.compose)
+    alias(libs.plugins.yinni.mobile.android.feature.api)
+    alias(libs.plugins.yinni.mobile.android.feature.impl)
+    alias(libs.plugins.yinni.mobile.android.library.compose)
 }
 
 android {
-    namespace = "com.yinni.samples.apps.yinni.feature.topic.api"
+    namespace = "com.yinni.samples.apps.yinni_mobile.feature.topic.api"
 }

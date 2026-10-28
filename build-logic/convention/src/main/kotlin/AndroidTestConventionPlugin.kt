@@ -15,8 +15,8 @@
  */
 
 import com.android.build.api.dsl.TestExtension
-import com.yinni.samples.apps.yinni.configureGradleManagedDevices
-import com.yinni.samples.apps.yinni.configureKotlinAndroid
+import com.yinni.samples.apps.yinni_mobile.configureGradleManagedDevices
+import com.yinni.samples.apps.yinni_mobile.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

@@ -15,7 +15,7 @@
  */
 
 import com.android.build.gradle.api.AndroidBasePlugin
-import com.yinni.samples.apps.yinni.libs
+import com.yinni.samples.apps.yinni_mobile.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

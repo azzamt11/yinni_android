@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import com.yinni.samples.apps.yinni.FlavorDimension
-import com.yinni.samples.apps.yinni.NiaFlavor
+import com.yinni.samples.apps.yinni_mobile.FlavorDimension
+import com.yinni.samples.apps.yinni_mobile.NiaFlavor
 
 /*
  * Copyright 2022 The Android Open Source Project
@@ -32,8 +32,8 @@ import com.yinni.samples.apps.yinni.NiaFlavor
  * limitations under the License.
  */
 plugins {
-    alias(libs.plugins.yinni.android.application)
-    alias(libs.plugins.yinni.android.application.compose)
+    alias(libs.plugins.yinni.mobile.android.application)
+    alias(libs.plugins.yinni.mobile.android.application.compose)
 }
 
 android {
