@@ -19,11 +19,10 @@ package com.yinni.samples.apps.yinni_mobile.core.model.data
 /**
  * Class summarizing user interest data
  */
-data class UserData(
+data class User(
     val bookmarkedNewsResources: Set<String>,
     val viewedNewsResources: Set<String>,
     val followedTopics: Set<String>,
-    val themeBrand: ThemeBrand,
     val darkThemeConfig: DarkThemeConfig,
     val useDynamicColor: Boolean,
     val shouldHideOnboarding: Boolean,
