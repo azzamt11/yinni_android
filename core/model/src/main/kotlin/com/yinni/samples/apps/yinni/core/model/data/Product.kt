@@ -17,9 +17,9 @@
 package com.yinni.samples.apps.yinni.core.model.data
 
 /**
- * External data layer representation of a NiA Topic
+ * External data layer representation of a NiA Product
  */
-data class Topic(
+data class Product(
     val id: String,
     val name: String,
     val shortDescription: String,
