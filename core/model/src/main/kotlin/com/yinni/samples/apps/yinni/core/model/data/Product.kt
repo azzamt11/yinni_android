@@ -26,4 +26,5 @@ data class Product(
     val longDescription: String,
     val url: String,
     val imageUrl: String,
+    val price: String,
 )

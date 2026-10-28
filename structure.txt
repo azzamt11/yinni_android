@@ -1,6 +1,6 @@
 # Yinni Android (Cloned from Now in Android) - Coding File Structure
 # Root: C:/Users/abdul/applications/yinni/yinni_android
-# Total Coding Files: 379
+# Total Coding Files: 378
 # (Excludes build/, .gradle/, .git/, .idea/, gradle wrapper starters, and binary/image assets)
 
 yinni_android/                                                                                                  [ ]
@@ -318,13 +318,12 @@ yinni_android/                                                                  
 │   ├── model/                                                                                                  [ ]
 │   │   ├── src/main/kotlin/com/yinni/samples/apps/yinni/core/model/data/                                       [ ]
 │   │   │   ├── DarkThemeConfig.kt                                                                              [ ]
+│   │   │   ├── NewSearchResult.kt                                                                              [*]
 │   │   │   ├── NewsResource.kt                                                                                 [ ]
-│   │   │   ├── Product.kt                                                                                      [ ]
+│   │   │   ├── Product.kt                                                                                      [*]
 │   │   │   ├── SearchResult.kt                                                                                 [ ]
-│   │   │   ├── ThemeBrand.kt                                                                                   [ ]
 │   │   │   ├── UserData.kt                                                                                     [ ]
-│   │   │   ├── UserNewsResource.kt                                                                             [ ]
-│   │   │   └── UserSearchResult.kt                                                                             [ ]
+│   │   │   └── UserNewsResource.kt                                                                             [ ]
 │   │   └── build.gradle.kts                                                                                    [ ]
 │   ├── navigation/                                                                                             [ ]
 │   │   ├── src/                                                                                                [ ]
