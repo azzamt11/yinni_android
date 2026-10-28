@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.sync.status
+package com.yinni.samples.apps.yinni.sync.status
 
 /**
  * Subscribes to backend requested synchronization

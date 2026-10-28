@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid
+package com.yinni.samples.apps.yinni
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 The Android Open Source Project
+ * Copyright 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.model.data
-
-import kotlinx.datetime.Instant
+package com.yinni.samples.apps.yinni.core.model.data
 
 /**
- * External data layer representation of a fully populated NiA news resource
+ * A [topic] with the additional information for whether or not it is followed.
  */
-data class NewsResource(
-    val id: String,
-    val title: String,
-    val content: String,
-    val url: String,
-    val headerImageUrl: String?,
-    val publishDate: Instant,
-    val type: String,
-    val topics: List<Topic>,
+// TODO consider changing to UserTopic and flattening
+data class FollowableTopic(
+    val topic: Topic,
+    val isFollowed: Boolean,
 )

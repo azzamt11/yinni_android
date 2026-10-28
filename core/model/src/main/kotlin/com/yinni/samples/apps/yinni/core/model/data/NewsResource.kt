@@ -14,10 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.model.data
+package com.yinni.samples.apps.yinni.core.model.data
 
-enum class DarkThemeConfig {
-    FOLLOW_SYSTEM,
-    LIGHT,
-    DARK,
-}
+import kotlinx.datetime.Instant
+
+/**
+ * External data layer representation of a fully populated NiA news resource
+ */
+data class NewsResource(
+    val id: String,
+    val title: String,
+    val content: String,
+    val url: String,
+    val headerImageUrl: String?,
+    val publishDate: Instant,
+    val type: String,
+    val topics: List<Topic>,
+)

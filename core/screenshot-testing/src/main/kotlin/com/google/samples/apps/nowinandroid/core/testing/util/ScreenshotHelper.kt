@@ -16,7 +16,7 @@
 
 @file:OptIn(ExperimentalRoborazziApi::class)
 
-package com.google.samples.apps.nowinandroid.core.testing.util
+package com.yinni.samples.apps.yinni.core.testing.util
 
 import android.graphics.Bitmap.CompressFormat.PNG
 import androidx.activity.ComponentActivity

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.data.util
+package com.yinni.samples.apps.yinni.core.data.util
 
 import android.content.Context
 import android.net.ConnectivityManager

@@ -16,7 +16,7 @@
 
 @file:Suppress("ktlint:standard:max-line-length")
 
-package com.google.samples.apps.nowinandroid.feature.settings.impl
+package com.yinni.samples.apps.yinni.feature.settings.impl
 
 import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility

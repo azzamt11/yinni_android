@@ -14,16 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.model.data
+package com.yinni.samples.apps.yinni.core.model.data
 
-/**
- * External data layer representation of a NiA Topic
- */
-data class Topic(
-    val id: String,
-    val name: String,
-    val shortDescription: String,
-    val longDescription: String,
-    val url: String,
-    val imageUrl: String,
-)
+enum class ThemeBrand {
+    DEFAULT,
+    ANDROID,
+}

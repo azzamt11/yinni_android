@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.feature.topic.impl
+package com.yinni.samples.apps.yinni.feature.topic.impl
 
 import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.gestures.Orientation

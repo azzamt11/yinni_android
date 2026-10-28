@@ -16,7 +16,7 @@
 
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package com.google.samples.apps.nowinandroid.interests.impl
+package com.yinni.samples.apps.yinni.interests.impl
 
 import androidx.annotation.StringRes
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi

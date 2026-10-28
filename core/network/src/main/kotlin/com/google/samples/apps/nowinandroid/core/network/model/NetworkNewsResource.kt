@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.network.model
+package com.yinni.samples.apps.yinni.core.network.model
 
 import android.annotation.SuppressLint
 import com.google.samples.apps.nowinandroid.core.model.data.NewsResource

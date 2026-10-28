@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.feature.search.impl
+package com.yinni.samples.apps.yinni.feature.search.impl
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertCountEquals

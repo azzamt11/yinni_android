@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.di
+package com.yinni.samples.apps.yinni.di
 
 import android.app.Activity
 import android.util.Log

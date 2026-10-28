@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.network.retrofit
+package com.yinni.samples.apps.yinni.core.network.retrofit
 
 import androidx.tracing.trace
 import com.google.samples.apps.nowinandroid.core.network.BuildConfig

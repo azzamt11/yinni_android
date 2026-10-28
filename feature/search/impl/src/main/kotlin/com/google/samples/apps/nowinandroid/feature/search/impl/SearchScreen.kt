@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.feature.search.impl
+package com.yinni.samples.apps.yinni.feature.search.impl
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation

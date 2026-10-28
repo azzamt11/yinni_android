@@ -16,7 +16,7 @@
 
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.google.samples.apps.nowinandroid.core.designsystem.component
+package com.yinni.samples.apps.yinni.core.designsystem.component
 
 import androidx.annotation.StringRes
 import androidx.compose.material3.CenterAlignedTopAppBar

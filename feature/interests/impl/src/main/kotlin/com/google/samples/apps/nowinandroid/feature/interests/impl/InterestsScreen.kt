@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.feature.interests.impl
+package com.yinni.samples.apps.yinni.feature.interests.impl
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text

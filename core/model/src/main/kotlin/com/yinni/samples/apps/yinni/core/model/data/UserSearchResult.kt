@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.model.data
+package com.yinni.samples.apps.yinni.core.model.data
 
-/** An entity that holds the search result */
-data class SearchResult(
-    val topics: List<Topic> = emptyList(),
-    val newsResources: List<NewsResource> = emptyList(),
+/**
+ * An entity of [SearchResult] with additional user information such as whether the user is
+ * following a topic.
+ */
+data class UserSearchResult(
+    val topics: List<FollowableTopic> = emptyList(),
+    val newsResources: List<UserNewsResource> = emptyList(),
 )

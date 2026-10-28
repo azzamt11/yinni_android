@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.common.result
+package com.yinni.samples.apps.yinni.core.common.result
 
 import app.cash.turbine.test
 import kotlinx.coroutines.flow.flow

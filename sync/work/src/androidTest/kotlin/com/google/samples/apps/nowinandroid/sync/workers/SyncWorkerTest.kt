@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.sync.workers
+package com.yinni.samples.apps.yinni.sync.workers
 
 import android.util.Log
 import androidx.test.platform.app.InstrumentationRegistry

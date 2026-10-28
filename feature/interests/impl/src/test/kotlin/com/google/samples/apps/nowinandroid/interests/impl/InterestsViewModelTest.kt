@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.interests.impl
+package com.yinni.samples.apps.yinni.interests.impl
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.testing.invoke

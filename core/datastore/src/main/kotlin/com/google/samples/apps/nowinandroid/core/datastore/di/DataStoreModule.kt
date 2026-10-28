@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.datastore.di
+package com.yinni.samples.apps.yinni.core.datastore.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore

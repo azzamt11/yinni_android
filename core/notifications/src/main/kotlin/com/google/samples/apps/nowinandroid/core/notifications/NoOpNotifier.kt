@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.notifications
+package com.yinni.samples.apps.yinni.core.notifications
 
 import com.google.samples.apps.nowinandroid.core.model.data.NewsResource
 import javax.inject.Inject

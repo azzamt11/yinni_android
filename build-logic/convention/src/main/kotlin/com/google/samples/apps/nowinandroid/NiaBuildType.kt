@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid
+package com.yinni.samples.apps.yinni
 
 /**
  * This is shared between :app and :benchmarks module to provide configurations type safety.

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.database
+package com.yinni.samples.apps.yinni.core.database
 
 import androidx.room.DeleteColumn
 import androidx.room.DeleteTable

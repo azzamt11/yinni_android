@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.feature.settings.impl
+package com.yinni.samples.apps.yinni.feature.settings.impl
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertIsSelected

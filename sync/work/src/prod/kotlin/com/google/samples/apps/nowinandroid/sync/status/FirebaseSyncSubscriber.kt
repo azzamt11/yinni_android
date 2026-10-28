@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.sync.status
+package com.yinni.samples.apps.yinni.sync.status
 
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.samples.apps.nowinandroid.sync.initializers.SYNC_TOPIC

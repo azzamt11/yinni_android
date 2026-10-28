@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.testing
+package com.yinni.samples.apps.yinni.core.testing
 
 import android.app.Application
 import android.content.Context

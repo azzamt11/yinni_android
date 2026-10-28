@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.database.util
+package com.yinni.samples.apps.yinni.core.database.util
 
 import androidx.room.TypeConverter
 import kotlinx.datetime.Instant

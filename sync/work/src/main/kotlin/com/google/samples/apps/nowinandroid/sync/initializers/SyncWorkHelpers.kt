@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.sync.initializers
+package com.yinni.samples.apps.yinni.sync.initializers
 
 import android.app.Notification
 import android.app.NotificationChannel

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.ui
+package com.yinni.samples.apps.yinni.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

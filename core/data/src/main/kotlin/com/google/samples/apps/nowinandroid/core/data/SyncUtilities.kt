@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.data
+package com.yinni.samples.apps.yinni.core.data
 
 import android.util.Log
 import com.google.samples.apps.nowinandroid.core.datastore.ChangeListVersions

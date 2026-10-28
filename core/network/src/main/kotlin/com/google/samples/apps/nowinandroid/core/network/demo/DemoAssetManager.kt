@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.network.demo
+package com.yinni.samples.apps.yinni.core.network.demo
 
 import java.io.InputStream
 

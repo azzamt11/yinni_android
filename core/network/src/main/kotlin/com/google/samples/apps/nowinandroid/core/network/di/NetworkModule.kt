@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.core.network.di
+package com.yinni.samples.apps.yinni.core.network.di
 
 import android.content.Context
 import androidx.tracing.trace
